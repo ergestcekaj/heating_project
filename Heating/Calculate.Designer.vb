@@ -44,6 +44,7 @@ Partial Class Calculate
         Me.Label10 = New System.Windows.Forms.Label()
         Me.ComboBoxMaterials = New System.Windows.Forms.ComboBox()
         Me.ComboBoxCountries = New System.Windows.Forms.ComboBox()
+        Me.Button_save = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -232,6 +233,15 @@ Partial Class Calculate
         Me.ComboBoxCountries.Size = New System.Drawing.Size(181, 33)
         Me.ComboBoxCountries.TabIndex = 22
         '
+        'Button_save
+        '
+        Me.Button_save.Location = New System.Drawing.Point(608, 318)
+        Me.Button_save.Name = "Button_save"
+        Me.Button_save.Size = New System.Drawing.Size(167, 50)
+        Me.Button_save.TabIndex = 23
+        Me.Button_save.Text = "Save"
+        Me.Button_save.UseVisualStyleBackColor = True
+        '
         'Calculate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(13.0!, 25.0!)
@@ -241,6 +251,7 @@ Partial Class Calculate
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(829, 510)
+        Me.Controls.Add(Me.Button_save)
         Me.Controls.Add(Me.ComboBoxCountries)
         Me.Controls.Add(Me.ComboBoxMaterials)
         Me.Controls.Add(Me.Label10)
@@ -292,4 +303,5 @@ Partial Class Calculate
     Friend WithEvents Label10 As Label
     Friend WithEvents ComboBoxMaterials As ComboBox
     Friend WithEvents ComboBoxCountries As ComboBox
+    Friend WithEvents Button_save As Button
 End Class

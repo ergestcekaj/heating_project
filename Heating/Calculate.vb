@@ -88,6 +88,12 @@ Public Class Calculate
         rankForm.Show()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button_save.Click
+        input_form.Show()
+
+
+    End Sub
+
     Private Sub TextBox_temperature_TextChanged(sender As Object, e As EventArgs) Handles TextBox_temperature.TextChanged
 
     End Sub

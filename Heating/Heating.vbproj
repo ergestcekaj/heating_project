@@ -105,6 +105,12 @@
     <Compile Include="Information.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="input_form.Designer.vb">
+      <DependentUpon>input_form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="input_form.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Information.resx">
       <DependentUpon>Information.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="input_form.resx">
+      <DependentUpon>input_form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
