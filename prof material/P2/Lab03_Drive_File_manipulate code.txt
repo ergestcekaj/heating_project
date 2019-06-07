@@ -1,0 +1,132 @@
+
+Public path As String = "D:\Users\P2\Lab03\TEST\"
+    Private Sub btnCreateDir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCreateDir.Click
+        path = path + "MyDir"
+        If Directory.Exists(path) = False Then
+            Directory.CreateDirectory(path)
+            lblInfo.Text = "The folder " & path & vbCrLf & " has been created."
+        End If
+        path = "D:\Users\P2\Lab03\TEST\"
+    End Sub
+
+    Private Sub btnMoveDir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMoveDir.Click
+        Dim target As String = "D:\Users\P2\Lab03\MyNewDir"
+        path = path + "MyDir"
+        If Directory.Exists(path) = True Then
+            Directory.Move(path, target)
+        Else
+            MsgBox("Directory does not exist", MsgBoxStyle.Exclamation)
+        End If
+        path = "D:\Users\P2\Lab03\TEST\"
+    End Sub
+
+    Private Sub btnDriveInfo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDriveInfo.Click
+        Dim myAllDrives() As DriveInfo = DriveInfo.GetDrives()
+        Dim myDrive As DriveInfo
+        ' Index 0 in myAllDrives() array - drive C:
+        ' Index 1 in myAllDrives() array - drive D:
+        myDrive = myAllDrives(1)
+        'MsgBox("Drive name: " & myDrive.ToString)
+        If myDrive.IsReady = True Then
+            lblDriveName.Text = myDrive.Name
+            lblFileSystem.Text = myDrive.DriveFormat
+            lblTotalSize.Text = myDrive.TotalSize & " bytes"
+            lblTotalFreeSpace.Text = myDrive.TotalFreeSpace & " bytes"
+        End If
+    End Sub
+
+    Private Sub btnCreateFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCreateFile.Click
+        Const FILE_NAME As String = "MyFile.txt"
+        'Const FILE_NAME2 As String = "MyFile.doc"
+        If File.Exists(path & FILE_NAME) Then
+            MsgBox("File already exists ", MsgBoxStyle.Exclamation)
+        Else
+            File.Create(path & FILE_NAME)
+            'File.Create(path & FILE_NAME2)
+        End If
+    End Sub
+
+    Private Sub btnWriteFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnWriteFile.Click
+        Const FILE_NAME As String = "MyFile.txt"
+        ' Create an instance of StreamWriter to write text to a file.
+        Dim sw As StreamWriter = New StreamWriter(path & FILE_NAME)
+        ' Add some text to the file.
+        If File.Exists(path & FILE_NAME) Then
+            sw.Write("This is the ")
+            ' Writes the specified string value, followed by the current line terminator,
+            ' to the standard output stream.
+            sw.WriteLine("header for the file.")
+            sw.WriteLine("-------------------")
+            ' Arbitrary objects can also be written to the file.
+            sw.Write("The date is: ")
+            sw.WriteLine(DateTime.Now)
+            sw.Close()
+        Else
+            MsgBox("File does not exist", MsgBoxStyle.Exclamation)
+        End If
+    End Sub
+
+    Private Sub btnWriteFile2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnWriteFile2.Click
+        Const FILE_NAME As String = "MyFile.txt"
+        ' Creates a new file, write the contents to the file, and then closes the file.
+        ' If the target file already exists, it is overwritten.
+        File.WriteAllText(path & FILE_NAME, "Something is written to the file")
+        File.WriteAllText(path & FILE_NAME, "The date is: " & DateTime.Now.ToString)
+    End Sub
+
+    Private Sub btnReadFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReadFile.Click
+        Const FILE_NAME As String = "textfile.txt"
+        If File.Exists(path & FILE_NAME) Then
+            txtFileViewer.Text = File.ReadAllText(path & FILE_NAME)
+        Else
+            MsgBox("File does not exist", MsgBoxStyle.Exclamation)
+        End If
+    End Sub
+
+    Private Sub btnReadFile2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReadFile2.Click
+        Const FILE_NAME As String = "MyFile.txt"
+        Dim sr As StreamReader = New StreamReader(path & FILE_NAME)
+        txtFileViewer.Text = sr.ReadToEnd()
+        sr.Close()
+    End Sub
+
+    Private Sub btnCopyFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCopyFile.Click
+        Const FILE_NAME As String = "MyFile.txt"
+        Dim path2 As String
+        path2 = path & "Temp\"
+        Directory.CreateDirectory(path2)
+        ' Path must be finished with file name and extension.
+        path2 = path2 + FILE_NAME
+        path = path + FILE_NAME
+        File.Copy(path, path2)
+    End Sub
+
+    Private Sub btnDeleteFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDeleteFile.Click
+        Const FILE_NAME As String = "MyFile.txt"
+        ' Path must be finished with file name and extension.
+        path = path + FILE_NAME
+        File.Delete(path)
+    End Sub
+
+    Private Sub btnMoveFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMoveFile.Click
+        Const FILE_NAME As String = "MyFile.txt"
+        Dim origin As String = path + FILE_NAME
+        Dim target As String = path + "MyNewDir\"
+        If Directory.Exists(target) = False Then
+            Directory.CreateDirectory(target)
+            ' Path must be finished with file name and extension.
+            target = target + FILE_NAME
+            File.Move(origin, target)
+        End If
+    End Sub
+
+    Private Sub btnRenameFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRenameFile.Click
+        Const FILE_NAME As String = "MyFile.txt"
+        Dim newFileName As String = "MyNewFile.txt"
+        Dim destFile As String
+        Dim sourceFile As String
+        ' Path must be finished with file name and extension.
+        sourceFile = path + FILE_NAME
+        destFile = path + newFileName
+        File.Move(sourceFile, destFile)
+    End Sub

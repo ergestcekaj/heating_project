@@ -1,0 +1,29 @@
+Programming II project description and requirements
+===================================================
+The aim of the project is to create workable application using VB.NET programming language.
+Subject of the project/work is chosen by a student.
+
+Within 1 week from the end of classes send email with subject of chosen project to wiktor.tracz@wl.sggw.pl 
+Subject of the email should be "Name of the course, FIT year".
+
+Requirements
+------------
+1. Use controls, functionalities and concepts, which were discussed and practiced during lectures and in the presentation:
+   - Some of the more advanced standard controls and common dialog controls.
+   - Manipulating files and directories.
+   - Error handling.
+   - Enhancing user interface – menus and toolbars.
+   - Accessing data stored in database (programmatically). Create application settings for defining (by an user) path to and name of the database. 
+   - Principles of user interface design.
+
+2. Use comments in your code.
+
+3. Software: Visual Basic 2012.
+
+4. Submission: 
+   - report (PDF) – description of the problem and how to use the program (file name: "Surname Name.pdf")
+   - program - VB project - folder with all needed files and components (folder name: "Surname Name")
+
+5. If sending by email, attach only one project - for one particular course. Subject of the email should be: "Name of the course, FIT year".
+
+Deadline: 10 of June

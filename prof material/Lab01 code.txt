@@ -1,0 +1,54 @@
+    Dim myName As String
+    Dim myAge As String
+    Dim myCountry As String
+    Dim myHobby As String
+    Dim myGender As String
+
+    Private Sub btnAdditem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAdditem.Click
+        Dim name As String
+        name = InputBox("Type name of the country of your birth if it isn't found on the list", "Add country name")
+        cboCountry.Items.Add(name)
+        'MsgBox(name, MsgBoxStyle.OkOnly, "Name of the country")
+    End Sub
+
+
+    Private Sub btnSummary_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSummary.Click
+
+        myName = txtName.Text
+        myAge = lstAge.SelectedItem
+
+        'Determine what gender was pointed
+        If rdbMale.Checked Then
+            myGender = rdbMale.Text
+        ElseIf rdbFemale.Checked Then
+            myGender = rdbFemale.Text
+        End If
+
+        'Determine what hobby was checked
+        If chkMusic.Checked = True Then
+            myHobby = "Listen to music"
+        ElseIf chkSport.Checked = True Then
+            myHobby = "Going for sport"
+        ElseIf chkDancing.Checked = True Then
+            myHobby = "Dancing"
+        ElseIf chkBooks.Checked = True Then
+            myHobby = "Reading books"
+        ElseIf chkTraveling.Checked = True Then
+            myHobby = "Traveling"
+        End If
+
+        'Take the name of the country that was selected
+        myCountry = cboCountry.SelectedItem
+
+        MsgBox(myName & ", " & myAge & ", " & myGender & ", " & myHobby & ", " & myCountry, MsgBoxStyle.OkOnly, "Summary")
+        'use vbCrLf 
+
+    End Sub
+
+    Private Sub frmQuestionnaire_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        cboCountry.Sorted = True
+    End Sub
+
+    Private Sub btnDone_Click(sender As Object, e As EventArgs) Handles btnDone.Click
+        Me.Close()
+    End Sub

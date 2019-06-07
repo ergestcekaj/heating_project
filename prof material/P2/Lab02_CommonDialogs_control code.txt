@@ -1,0 +1,130 @@
+
+    Private myFileName As String
+    Private Sub btnOpenFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpenFile.Click
+        With myOpenFileDialog
+            '.Reset()
+            .InitialDirectory = "D:\"
+            ' Check to ensure that the selected file exists.
+            .CheckFileExists = True
+            ' Check to ensure that the selected path exists.
+            .CheckPathExists = True
+            ' "txt" is a default extension of a file. NOTE: the "." is not included.
+            .DefaultExt = "txt"
+            ' The type of a file specification.
+            .Filter = "Text files (*.txt)|*.txt|All files|*.*"
+            ' Only one file can be selected.
+            .Multiselect = False
+            .Title = "Select a file to open"
+
+            If .ShowDialog = Windows.Forms.DialogResult.OK Then
+                txtFileViewer.Text = My.Computer.FileSystem.ReadAllText(.FileName)
+            End If
+        End With
+    End Sub
+
+    Private Sub btnSaveFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSaveFile.Click
+        With mySaveFileDialog
+            ' Add the default extension, if the user neglects to add an extension.
+            .AddExtension = True
+            ' Check to ensure that the selected path exists.
+            .CheckPathExists = True
+            ' Prompt before creating a new file.
+            .CreatePrompt = False
+            ' Prompt before overwriting.
+            .OverwritePrompt = True
+            ' Show the Help button.
+            .ShowHelp = True
+            .DefaultExt = "txt"
+            myFileName = "default file name"
+            ' Prompt with the current file name if it was specified. The default is "".
+            .FileName = myFileName
+            .Filter = "Text files (*.txt)|*.txt|" & "All files|*.*"
+
+            If .ShowDialog() = Windows.Forms.DialogResult.OK Then
+                My.Computer.FileSystem.WriteAllText(.FileName, txtFileViewer.Text, False)
+            End If
+
+        End With
+    End Sub
+
+    Private Sub btnSelectFont_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSelectFont.Click
+        With myFontDialog
+            ' In the SelectFont dialog box the font will be the same as in text box.
+            .Font = txtFileViewer.Font
+            .Color = txtFileViewer.ForeColor
+            ' Allow the users to select colors. The default is False.
+            .ShowColor = True
+            ' Show the Apply button on the dialog box. The default is False.
+            .ShowApply = True
+            ' Show the Help button. The default is False.
+            .ShowHelp = True
+            ' Allow fonts that exist. The default is False.
+            .FontMustExist = True
+            ' Set the minimum and maximum selectable font sizes. The default for both these is 0.
+            .MaxSize = 28
+            .MinSize = 6
+
+            If .ShowDialog = Windows.Forms.DialogResult.OK Then
+                txtFileViewer.Font = .Font
+                txtFileViewer.ForeColor = .Color
+            End If
+        End With
+    End Sub
+
+    Private Sub myFontDialog_Apply(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles myFontDialog.Apply
+        txtFileViewer.Font = myFontDialog.Font
+        txtFileViewer.ForeColor = myFontDialog.Color
+    End Sub
+    Private Sub btnSelectColor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSelectColor.Click
+        ' For this example, put Red, Green, and Blue in the custom 
+        ' colors section.
+        Static CustomColors() As Integer = _
+            {RGB(255, 0, 0), RGB(0, 255, 0), RGB(0, 0, 255)}
+        With myColorDialog
+            ' Initialize the selected color to match the color currently used
+            ' by the TextBox's foreground color. The default is Black.
+            .Color = txtFileViewer.ForeColor
+            ' Fill the custom colors on the dialog box with the array you've supplied. 
+            .CustomColors = CustomColors
+            ' Allow the user to create custom colors? The default is True.
+            .AllowFullOpen = True
+            ' Display all of the basic colors? The default is False.
+            .AnyColor = True
+            ' Restrict users to solid colors only. The default is False.
+            .SolidColorOnly = True
+            ' Display Help button. The default is False.
+            .ShowHelp = True
+
+            If .ShowDialog() = Windows.Forms.DialogResult.OK Then
+                txtFileViewer.ForeColor = .Color
+                ' Store the custom colors for future use. 
+                CustomColors = .CustomColors
+            End If
+
+            ' Reset all the colors in the dialog box.
+            ' This isn't necessary, but it does make sure the dialog box is in a known state for its next use.
+            myColorDialog.Reset()
+        End With
+    End Sub
+
+    Private Sub btnBrowseFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBrowseFolder.Click
+        With myFolderBrowserDialog
+            ' Set the root folder to the location from which to start browsing. 
+            ' You can choose only from the list of system special folders, 
+            ' which are folders such as Program Files, Programs, ProgramsFiles, 
+            ' MyComputer, MyDocuments, System, or Startup, which contain common information.  
+            .RootFolder = Environment.SpecialFolder.MyComputer
+
+            ' Set the Description property to provide additional instructions to the user.
+            .Description = "Select the directory you want to use as the default."
+
+            ' Use the ShowNewFolderButton property to control in order 
+            ' the user is able to create new folders via the New Folder button.
+            .ShowNewFolderButton = True
+
+            If .ShowDialog = Windows.Forms.DialogResult.OK Then
+                txtDirectoryName.Text = .SelectedPath
+            End If
+        End With
+    End Sub
+
