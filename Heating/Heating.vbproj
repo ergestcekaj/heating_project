@@ -74,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.vb" />
+    <Compile Include="DB_form.Designer.vb">
+      <DependentUpon>DB_form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DB_form.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Heating_Cost_Calculator.Designer.vb">
       <DependentUpon>Heating_Cost_Calculator.vb</DependentUpon>
     </Compile>
@@ -146,6 +152,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DB_form.resx">
+      <DependentUpon>DB_form.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Heating_Cost_Calculator.resx">
       <DependentUpon>Heating_Cost_Calculator.vb</DependentUpon>
     </EmbeddedResource>
