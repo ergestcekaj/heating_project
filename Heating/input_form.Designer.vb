@@ -22,31 +22,21 @@ Partial Class input_form
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button_submit = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.ComboBox_date = New System.Windows.Forms.ComboBox()
+        Me.ComboBox_month = New System.Windows.Forms.ComboBox()
         Me.ComboBox_name = New System.Windows.Forms.ComboBox()
         Me.TextBox_duration = New System.Windows.Forms.TextBox()
-        Me.Button_Login = New System.Windows.Forms.Button()
+        Me.Button_Insert = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button_operations = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Button_submit
-        '
-        Me.Button_submit.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_submit.Location = New System.Drawing.Point(19, 265)
-        Me.Button_submit.Name = "Button_submit"
-        Me.Button_submit.Size = New System.Drawing.Size(167, 54)
-        Me.Button_submit.TabIndex = 0
-        Me.Button_submit.Text = "Submit"
-        Me.Button_submit.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -74,19 +64,19 @@ Partial Class input_form
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(14, 113)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(57, 25)
+        Me.Label3.Size = New System.Drawing.Size(72, 25)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Date"
+        Me.Label3.Text = "Month"
         '
-        'ComboBox_date
+        'ComboBox_month
         '
-        Me.ComboBox_date.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox_date.FormattingEnabled = True
-        Me.ComboBox_date.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novermber", "December"})
-        Me.ComboBox_date.Location = New System.Drawing.Point(150, 119)
-        Me.ComboBox_date.Name = "ComboBox_date"
-        Me.ComboBox_date.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox_date.TabIndex = 4
+        Me.ComboBox_month.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_month.FormattingEnabled = True
+        Me.ComboBox_month.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novermber", "December"})
+        Me.ComboBox_month.Location = New System.Drawing.Point(150, 119)
+        Me.ComboBox_month.Name = "ComboBox_month"
+        Me.ComboBox_month.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox_month.TabIndex = 4
         '
         'ComboBox_name
         '
@@ -104,57 +94,75 @@ Partial Class input_form
         Me.TextBox_duration.Size = New System.Drawing.Size(121, 20)
         Me.TextBox_duration.TabIndex = 6
         '
-        'Button_Login
+        'Button_Insert
         '
-        Me.Button_Login.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Login.Location = New System.Drawing.Point(19, 186)
-        Me.Button_Login.Name = "Button_Login"
-        Me.Button_Login.Size = New System.Drawing.Size(167, 54)
-        Me.Button_Login.TabIndex = 7
-        Me.Button_Login.Text = "Login"
-        Me.Button_Login.UseVisualStyleBackColor = True
+        Me.Button_Insert.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Insert.Location = New System.Drawing.Point(19, 197)
+        Me.Button_Insert.Name = "Button_Insert"
+        Me.Button_Insert.Size = New System.Drawing.Size(88, 43)
+        Me.Button_Insert.TabIndex = 7
+        Me.Button_Insert.Text = "Insert"
+        Me.Button_Insert.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button_Login)
+        Me.GroupBox1.Controls.Add(Me.Button_operations)
+        Me.GroupBox1.Controls.Add(Me.Button_Insert)
         Me.GroupBox1.Controls.Add(Me.TextBox_duration)
         Me.GroupBox1.Controls.Add(Me.ComboBox_name)
-        Me.GroupBox1.Controls.Add(Me.ComboBox_date)
+        Me.GroupBox1.Controls.Add(Me.ComboBox_month)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.Button_submit)
         Me.GroupBox1.Location = New System.Drawing.Point(17, 25)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(304, 350)
+        Me.GroupBox1.Size = New System.Drawing.Size(304, 349)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
+        Me.GroupBox1.Text = "Comand Panel"
+        '
+        'Button_operations
+        '
+        Me.Button_operations.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_operations.Location = New System.Drawing.Point(159, 197)
+        Me.Button_operations.Name = "Button_operations"
+        Me.Button_operations.Size = New System.Drawing.Size(101, 43)
+        Me.Button_operations.TabIndex = 8
+        Me.Button_operations.Text = "Operations"
+        Me.Button_operations.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Location = New System.Drawing.Point(338, 25)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(325, 349)
+        Me.GroupBox2.Size = New System.Drawing.Size(594, 349)
         Me.GroupBox2.TabIndex = 9
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "GroupBox2"
+        Me.GroupBox2.Text = "View Panel"
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeColumns = False
+        Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.GridColor = System.Drawing.SystemColors.ControlLight
         Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(319, 330)
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(588, 330)
         Me.DataGridView1.TabIndex = 0
         '
         'input_form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(685, 389)
+        Me.ClientSize = New System.Drawing.Size(944, 504)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "input_form"
@@ -166,16 +174,15 @@ Partial Class input_form
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Button_submit As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents ComboBox_date As ComboBox
+    Friend WithEvents ComboBox_month As ComboBox
     Friend WithEvents ComboBox_name As ComboBox
     Friend WithEvents TextBox_duration As TextBox
-    Friend WithEvents Button_Login As Button
+    Friend WithEvents Button_Insert As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Button_operations As Button
 End Class

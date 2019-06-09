@@ -73,6 +73,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="backend\actions\ActionsUtils.vb" />
+    <Compile Include="backend\entities\Heating.vb" />
+    <Compile Include="backend\operations\OperationsUtils.vb" />
     <Compile Include="Class1.vb" />
     <Compile Include="DB_form.Designer.vb">
       <DependentUpon>DB_form.vb</DependentUpon>
@@ -150,6 +153,7 @@
     <Compile Include="rfmat.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="shared\Filter.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DB_form.resx">
@@ -203,5 +207,6 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

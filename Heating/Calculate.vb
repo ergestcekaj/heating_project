@@ -88,7 +88,7 @@ Public Class Calculate
         rankForm.Show()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button_save.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button_Actions.Click
         input_form.Show()
 
 
