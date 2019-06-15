@@ -2,7 +2,7 @@
 
     Dim con As New OleDb.OleDbConnection
     Dim dbProvider As String = "PROVIDER=Microsoft.Jet.OLEDB.4.0;"
-    Dim dbSource As String = "Data Source = C:\Users\Eddi\source\repos\heating_project\Heating\bin\Debug\Heating_DB.mdb"
+    Dim dbSource As String = "Data Source =C:\Users\Eddi\source\repos\heating_project\Heating\bin\Debug\Heating_DB.mdb"
     Dim sql As String ' sql statement
 
     Private Sub New()

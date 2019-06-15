@@ -3,25 +3,23 @@ Imports System
 Imports System.Data.SqlClient
 
 Public Class input_form
-    Dim con As New OleDb.OleDbConnection
-    Dim dbProvider As String = "PROVIDER=Microsoft.Jet.OLEDB.4.0;"
-    Dim dbSource As String = "Data Source = C:\Users\Eddi\source\repos\heating_project\Heating\bin\Debug\Heating_DB.mdb"
-    Dim sql As String ' sql statement
 
     Dim operationsUtils As OperationsUtils = OperationsUtils.GetInstance
 
     Private Sub Button_Insert_Click(sender As Object, e As EventArgs) Handles Button_Insert.Click
         Dim cost = Calculate.TextBox_cost.Text
-        Dim heatingModel As Heating = New Heating()
+        If checkCost(cost) Then
+            Dim heatingModel As Heating = New Heating()
+            heatingModel.Name = ComboBox_name.SelectedItem.ToString
+            heatingModel.Duration = Convert.ToInt32(TextBox_duration.Text)
+            heatingModel.months = ComboBox_month.SelectedItem.ToString
+            heatingModel.cost = heatingModel.Duration * 3.6 * Convert.ToDouble(cost)
+            operationsUtils.insert(heatingModel)
+            fillDataGrid()
+        Else
+            MessageBox.Show(" Please calculate the cost in the previous view")
 
-        heatingModel.Name = ComboBox_name.SelectedItem.ToString
-        heatingModel.Duration = Convert.ToInt32(TextBox_duration.Text)
-        heatingModel.months = ComboBox_month.SelectedItem.ToString
-        heatingModel.cost = heatingModel.Duration * 3600 * Convert.ToDouble(cost)
-
-        operationsUtils.insert(heatingModel)
-
-        fillDataGrid()
+        End If
 
     End Sub
 
@@ -36,4 +34,11 @@ Public Class input_form
     Private Sub Button_operations_Click(sender As Object, e As EventArgs) Handles Button_operations.Click
         DB_form.Show()
     End Sub
+
+    Private Function checkCost(cost As String) As Boolean
+        If cost Is Nothing Or cost = "" Then
+            Return False
+        End If
+        Return True
+    End Function
 End Class

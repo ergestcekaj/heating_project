@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class input_form
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class input_form
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -54,9 +54,9 @@ Partial Class input_form
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(14, 67)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 25)
+        Me.Label2.Size = New System.Drawing.Size(125, 25)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Duration"
+        Me.Label2.Text = "Duration (h)"
         '
         'Label3
         '
@@ -75,7 +75,7 @@ Partial Class input_form
         Me.ComboBox_month.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novermber", "December"})
         Me.ComboBox_month.Location = New System.Drawing.Point(150, 119)
         Me.ComboBox_month.Name = "ComboBox_month"
-        Me.ComboBox_month.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox_month.Size = New System.Drawing.Size(110, 21)
         Me.ComboBox_month.TabIndex = 4
         '
         'ComboBox_name
@@ -84,14 +84,14 @@ Partial Class input_form
         Me.ComboBox_name.Items.AddRange(New Object() {"Artan", "Michele", "Lucie", "Hugo", "Rodrigo"})
         Me.ComboBox_name.Location = New System.Drawing.Point(150, 22)
         Me.ComboBox_name.Name = "ComboBox_name"
-        Me.ComboBox_name.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox_name.Size = New System.Drawing.Size(110, 21)
         Me.ComboBox_name.TabIndex = 5
         '
         'TextBox_duration
         '
         Me.TextBox_duration.Location = New System.Drawing.Point(150, 67)
         Me.TextBox_duration.Name = "TextBox_duration"
-        Me.TextBox_duration.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox_duration.Size = New System.Drawing.Size(110, 20)
         Me.TextBox_duration.TabIndex = 6
         '
         'Button_Insert
@@ -151,7 +151,7 @@ Partial Class input_form
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.GridColor = System.Drawing.SystemColors.ControlLight
+        Me.DataGridView1.GridColor = System.Drawing.SystemColors.WindowFrame
         Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True

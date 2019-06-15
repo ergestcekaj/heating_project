@@ -28,24 +28,27 @@ Partial Class AboutForm
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.BackColor = System.Drawing.Color.Lime
+        Me.RichTextBox1.BackColor = System.Drawing.Color.Azure
         Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox1.Location = New System.Drawing.Point(438, 25)
+        Me.RichTextBox1.Location = New System.Drawing.Point(269, 12)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(181, 137)
+        Me.RichTextBox1.Size = New System.Drawing.Size(177, 170)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = "The Heating Cost Calculator Tool" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "Designer: Ergest Cekaj" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "Forest Information Tech" &
-    "nology 2018"
+    "nology " & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "Warsaw 2019"
         '
         'AboutForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(618, 528)
+        Me.ClientSize = New System.Drawing.Size(458, 360)
         Me.Controls.Add(Me.RichTextBox1)
+        Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.Name = "AboutForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "About"
         Me.ResumeLayout(False)
 

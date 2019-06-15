@@ -91,7 +91,6 @@ Partial Class Calculate
         Me.TextBox_volume.Name = "TextBox_volume"
         Me.TextBox_volume.Size = New System.Drawing.Size(181, 31)
         Me.TextBox_volume.TabIndex = 4
-        Me.TextBox_volume.Text = "4"
         '
         'TextBox_temperature
         '
@@ -248,7 +247,7 @@ Partial Class Calculate
         Me.AutoScaleDimensions = New System.Drawing.SizeF(13.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.BackColor = System.Drawing.SystemColors.Menu
+        Me.BackColor = System.Drawing.SystemColors.Info
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(829, 510)

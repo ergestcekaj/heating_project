@@ -37,11 +37,11 @@ Partial Class helpinfo
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.RichTextBox2.BackColor = System.Drawing.Color.AntiqueWhite
         Me.RichTextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox2.Location = New System.Drawing.Point(23, 12)
+        Me.RichTextBox2.Location = New System.Drawing.Point(24, 12)
         Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(362, 332)
+        Me.RichTextBox2.Size = New System.Drawing.Size(360, 283)
         Me.RichTextBox2.TabIndex = 1
         Me.RichTextBox2.Text = resources.GetString("RichTextBox2.Text")
         '
@@ -51,7 +51,7 @@ Partial Class helpinfo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(414, 376)
+        Me.ClientSize = New System.Drawing.Size(418, 377)
         Me.Controls.Add(Me.RichTextBox2)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Name = "helpinfo"

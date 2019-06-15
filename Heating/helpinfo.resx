@@ -126,6 +126,9 @@ The calculate button gives the output of the energy that the heating device need
 The energy is calculated in KJ and the cost in Cents.The RankThem button shows two tables where the results are ordered based on witch material is more convinient to use in a specific country or 
 witch country has the cheapest material used for the heating.
 
+The actions button direct to input form where the user has to provide informations like name,month and the duration of the heating calculated in hours. After providing such information and 
+saving them into the database with the operation button a new window is opened. In this window the user can selected specific names and months in order to calculate the total cost of the heating.
+
 
 </value>
   </data>
