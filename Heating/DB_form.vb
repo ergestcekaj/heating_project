@@ -1,10 +1,10 @@
 ﻿Public Class DB_form
-
+    'This is the operation form responsable for filtring the data and the creation of the file
 
     Dim operationsUtils As OperationsUtils = OperationsUtils.GetInstance
 
-
     Private Sub DB_form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         fillDataGrid()
         calculateTotalCost()
     End Sub
@@ -34,7 +34,7 @@
     Private Sub calculateTotalCost()
         Dim totalCost As Integer = 0
         For index As Integer = 0 To DataGridView_Filtered_Data.RowCount - 1
-            totalCost += Convert.ToInt32(DataGridView_Filtered_Data.Rows(index).Cells(4).Value)
+            totalCost += Convert.ToInt32(getDataGridValueAt(index, 4))
         Next
         Label_Total_Cost.Text = totalCost.ToString()
     End Sub
@@ -49,7 +49,7 @@
     End Function
 
     Private Function checkValidity(filter As Filter) As Boolean
-        If filter.Name_list.Count = 0 And filter.Month_list.Count = 0 Then
+        If filter.Name_list.Count = 0 Or filter.Month_list.Count = 0 Then
             MessageBox.Show("Please select data from Names and Months")
             Return False
         End If
@@ -61,8 +61,26 @@
     End Sub
 
     Private Sub Button_Extract_Click(sender As Object, e As EventArgs) Handles Button_Extract.Click
+        Dim tmpArrayList As ArrayList = New ArrayList()
+        For index As Integer = 0 To DataGridView_Filtered_Data.RowCount - 1
+            Dim heating As Heating = New Heating()
+            heating.id = Convert.ToInt32(getDataGridValueAt(index, 0))
+            heating.cost = Convert.ToDouble(getDataGridValueAt(index, 4))
+            heating.Duration = Convert.ToDouble(getDataGridValueAt(index, 2))
+            heating.months = Convert.ToString(getDataGridValueAt(index, 3))
+            heating.Name = Convert.ToString(getDataGridValueAt(index, 1))
 
+            tmpArrayList.Add(heating)
+        Next
+
+        If operationsUtils.exportToFile(tmpArrayList) Then
+            MessageBox.Show("Done")
+        End If
 
 
     End Sub
+
+    Private Function getDataGridValueAt(row As Integer, column As Integer) As Object
+        Return DataGridView_Filtered_Data.Rows(row).Cells(column).Value
+    End Function
 End Class

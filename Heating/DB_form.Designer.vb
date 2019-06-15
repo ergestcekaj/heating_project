@@ -59,7 +59,7 @@ Partial Class DB_form
         Me.Button_Save.Name = "Button_Save"
         Me.Button_Save.Size = New System.Drawing.Size(81, 36)
         Me.Button_Save.TabIndex = 1
-        Me.Button_Save.Text = "Save"
+        Me.Button_Save.Text = "Filter"
         Me.Button_Save.UseVisualStyleBackColor = True
         '
         'Names

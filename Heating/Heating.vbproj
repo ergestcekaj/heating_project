@@ -99,7 +99,9 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="backend\actions\ActionsUtils.vb" />
+    <Compile Include="backend\Constants.vb" />
     <Compile Include="backend\entities\Heating.vb" />
+    <Compile Include="backend\fileUtils\FileUtils.vb" />
     <Compile Include="backend\operations\OperationsUtils.vb" />
     <Compile Include="Class1.vb" />
     <Compile Include="DB_form.Designer.vb">

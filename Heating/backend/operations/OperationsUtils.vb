@@ -1,6 +1,8 @@
 ﻿Public Class OperationsUtils
+    'Here are called the utils and direct comunication with the front end. This is also a singelton
 
     Dim actionsUtils As ActionsUtils = ActionsUtils.GetInstance
+    Dim fileUtils As FileUtils = FileUtils.GetInstance
 
     Private Sub New()
 
@@ -23,6 +25,10 @@
 
     Public Function filterData(filter As Filter) As DataSet
         Return actionsUtils.filterData(filter)
+    End Function
+
+    Public Function exportToFile(list As ArrayList) As Boolean
+        Return fileUtils.exportToFile(list)
     End Function
 
 End Class
